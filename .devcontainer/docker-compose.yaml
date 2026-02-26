@@ -3,6 +3,7 @@ services:
     build:
       args:
         DEBIAN__DOCKER_IMAGE__TAG__DATE: "20260918"
+        NODE_JS__VERSION: "26.9.0"
       context: "."
       dockerfile: "Dockerfile"
     depends_on: {}
