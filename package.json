@@ -8,6 +8,10 @@
 		"url": "https://github.com/native-typescript/template-of-node-js-application/issues"
 	},
 	"description": "A template of a Node.js application.",
+	"devDependencies": {
+		"@types/node": "25.9.1",
+		"typescript": "6.0.3"
+	},
 	"engines": {
 		"node": ">=26.9.0",
 		"npm": ">=11.19.1"
@@ -18,7 +22,9 @@
 		"type": "git",
 		"url": "git+https://github.com/native-typescript/template-of-node-js-application.git"
 	},
-	"scripts": {},
+	"scripts": {
+		"typescript:check": "tsc"
+	},
 	"type": "module",
 	"version": "2.0.0"
 }
