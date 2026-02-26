@@ -7,6 +7,10 @@
 	"bugs": {
 		"url": "https://github.com/native-typescript/template-of-node-js-application/issues"
 	},
+	"devDependencies": {
+		"@types/node": "25.9.1",
+		"typescript": "6.0.3"
+	},
 	"engines": {
 		"node": ">=24.14.0",
 		"npm": ">=11.9.0"
@@ -17,7 +21,9 @@
 		"type": "git",
 		"url": "git+https://github.com/native-typescript/template-of-node-js-application.git"
 	},
-	"scripts": {},
+	"scripts": {
+		"typescript:check": "tsc"
+	},
 	"type": "module",
 	"version": "0.0.0"
 }
