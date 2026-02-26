@@ -1,0 +1,23 @@
+{
+	"author": {
+		"email": "goodheropl@gmail.com",
+		"name": "Rafał Majewski",
+		"url": "https://github.com/rafal-majewski"
+	},
+	"bugs": {
+		"url": "https://github.com/native-typescript/template-of-node-js-application/issues"
+	},
+	"engines": {
+		"node": ">=24.14.0",
+		"npm": ">=11.9.0"
+	},
+	"homepage": "https://github.com/native-typescript/template-of-node-js-application#readme",
+	"name": "@native-typescript/template-of-node-js-application",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/native-typescript/template-of-node-js-application.git"
+	},
+	"scripts": {},
+	"type": "module",
+	"version": "0.0.0"
+}
