@@ -13,7 +13,7 @@
 	"otherPortsAttributes": {},
 	"overrideCommand": true,
 	"portsAttributes": {},
-	"postCreateCommand": ". ~/.bashrc",
+	"postCreateCommand": "npm clean-install && . ~/.bashrc",
 	"privileged": false,
 	"remoteEnv": {},
 	"remoteUser": "developer",
