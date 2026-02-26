@@ -17,6 +17,7 @@
 		"eslint-plugin-perfectionist": "5.9.0",
 		"eslint-plugin-unused-imports": "4.4.1",
 		"jiti": "2.7.0",
+		"prettier": "3.9.6",
 		"typescript": "6.0.3",
 		"typescript-eslint": "8.67.0"
 	},
@@ -33,6 +34,8 @@
 	"scripts": {
 		"eslint:check": "eslint --max-warnings=0 .",
 		"eslint:fix": "eslint --fix --max-warnings=0 .",
+		"prettier:check": "prettier --check .",
+		"prettier:fix": "prettier --write .",
 		"typescript:check": "tsc"
 	},
 	"type": "module",
