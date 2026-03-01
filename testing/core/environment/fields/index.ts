@@ -1,1 +1,1 @@
-export type * from "./configuration/index.ts";
+export * from "./configuration/index.ts";
