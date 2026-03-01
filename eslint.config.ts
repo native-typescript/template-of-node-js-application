@@ -545,7 +545,31 @@ export default [
 			"import-x/no-named-as-default-member": [`warn`],
 			"import-x/no-named-default": [`warn`],
 			"import-x/no-relative-packages": [`warn`],
-			"import-x/no-restricted-paths": [`error`],
+			"import-x/no-restricted-paths": [
+				`error`,
+				{
+					zones: [
+						{
+							except: [],
+							from: `./!(node_modules|testing)/**/*`,
+							message: `The testing module should not import non-testing code.`,
+							target: `./testing/**/*`,
+						},
+						{
+							except: [],
+							from: `./**/*.test.ts`,
+							message: `Test suites should not be imported.`,
+							target: `./**/*`,
+						},
+						{
+							except: [],
+							from: `./testing/instances/**/*`,
+							message: `The core module should not import the instances module.`,
+							target: `./testing/core/**/*`,
+						},
+					],
+				},
+			],
 			"import-x/no-self-import": [`warn`],
 			"import-x/no-unassigned-import": [`warn`, {allow: []}],
 			"import-x/no-useless-path-segments": [`warn`, {noUselessIndex: false}],
@@ -1120,6 +1144,51 @@ export default [
 						{
 							message: `Put this file into its own subdirectory and then use a module file.`,
 							regex: `^\\.\\/(?!module\\.ts$)[^\\/]+$`,
+						},
+						{
+							message: `The import is too deep. Use a shallower module file.`,
+							regex: `^\\.\\.\\/(?:(?:\\.\\.\\/){0,})(?:(?:(?!\\.\\.\\/)[^\\/]+\\/){2,})module\\.ts$`,
+						},
+						{
+							message: `The import is too deep. Use a shallower module file.`,
+							regex: `^\\.\\/(?:(?:[^\\/]+\\/){2,})module\\.ts$`,
+						},
+						{
+							message: `Use a module file.`,
+							regex: `^\\.\\.\\/(?:(?:\\.\\.\\/){0,})(?:(?:(?!\\.\\.)(?:[^\\/]+)\\/){1,})(?!module\\.ts$)[^\\/]+$`,
+						},
+						{
+							message: `Use a module file.`,
+							regex: `^\\.\\/(?:(?:[^\\/]+\\/){1,})(?!module\\.ts$)[^\\/]+$`,
+						},
+					],
+				},
+			],
+		},
+	},
+	{
+		files: [`./**/*.test.{js,ts}`],
+		rules: {
+			"import-x/no-default-export": [`off`],
+			"no-restricted-imports": [
+				`warn`,
+				{
+					patterns: [
+						{
+							message: `Do not use a shallower index file.`,
+							regex: `^\\.\\.\\/(?:(?:\\.\\.\\/){0,})index\\.ts$`,
+						},
+						{
+							message: `Do not use a shallower module file.`,
+							regex: `^\\.\\.\\/(?:(?:\\.\\.\\/){0,})module\\.ts$`,
+						},
+						{
+							message: `Do not use the local index file.`,
+							regex: `^\\.\\/index\\.ts$`,
+						},
+						{
+							message: `Do not use the local module file.`,
+							regex: `^\\.\\/module\\.ts$`,
 						},
 						{
 							message: `The import is too deep. Use a shallower module file.`,
