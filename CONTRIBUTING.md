@@ -123,6 +123,16 @@ to make a release.
 
 The tests are using [the native Node.js test runner](https://nodejs.org/api/test.html).
 
+#### Checking
+
+Run
+
+```
+npm run test:check
+```
+
+to perform testing for all tests.
+
 #### Environment variables
 
 The tests can be configured via [environment variables](https://en.wikipedia.org/wiki/Environment_variable).
