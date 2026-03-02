@@ -4,6 +4,7 @@
 
 - .devcontainer - Configuration of [Development Containers](https://containers.dev);
 - [.dockerignore](https://docs.docker.com/reference/dockerfile/#dockerignore-file);
+- [.env](https://nodejs.org/api/environment_variables.html#env-files);
 - .git - Metadata of the [Git](https://git-scm.com) repository;
 - .github - Configuration of [GitHub](https://github.com);
 - [.gitignore](https://git-scm.com/docs/gitignore);
@@ -140,7 +141,7 @@ Tests are using [the native Node.js test runner](https://nodejs.org/api/test.htm
 
 #### Environment variables
 
-Tests can be configured via [environment variables](https://en.wikipedia.org/wiki/Environment_variable).
+Tests can be configured via [environment variables](https://en.wikipedia.org/wiki/Environment_variable). You can create a [.env](https://nodejs.org/api/environment_variables.html#env-files) file in the root of the project to set the environment variables.
 
 ##### List
 
@@ -209,7 +210,7 @@ to perform type checking.
 
 ## Environment variables
 
-The application can be configured via [environment variables](https://en.wikipedia.org/wiki/Environment_variable).
+The application can be configured via [environment variables](https://en.wikipedia.org/wiki/Environment_variable). You can create a [.env](https://nodejs.org/api/environment_variables.html#env-files) file in the root of the project to set the environment variables.
 
 ### List
 
