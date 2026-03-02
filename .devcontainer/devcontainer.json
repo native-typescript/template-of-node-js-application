@@ -11,7 +11,7 @@
 	"features": {},
 	"forwardPorts": [],
 	"init": false,
-	"initializeCommand": "> ${localWorkspaceFolder}/.devcontainer/.env",
+	"initializeCommand": "> ${localWorkspaceFolder}/.devcontainer/.env && echo \"DOCKER_GID=$(getent group docker | cut -d: -f3)\" >> ${localWorkspaceFolder}/.devcontainer/.env",
 	"mounts": [],
 	"name": "Developing",
 	"otherPortsAttributes": {},
