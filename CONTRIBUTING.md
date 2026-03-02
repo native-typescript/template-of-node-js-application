@@ -133,6 +133,18 @@ npm run test:check
 
 to perform testing for all tests.
 
+##### Integration
+
+Integration tests are such that they do setup some external dependencies before running.
+
+Run
+
+```
+npm run test:check:integration
+```
+
+to perform testing for integration tests.
+
 #### Environment variables
 
 The tests can be configured via [environment variables](https://en.wikipedia.org/wiki/Environment_variable).
