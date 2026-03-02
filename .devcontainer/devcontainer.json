@@ -21,7 +21,7 @@
 	"otherPortsAttributes": {},
 	"overrideCommand": true,
 	"portsAttributes": {},
-	"postCreateCommand": "npm clean-install && . ~/.bashrc",
+	"postCreateCommand": "[ -f ./.env ] || cp ./.env.example ./.env; npm clean-install && . ~/.bashrc",
 	"privileged": false,
 	"remoteEnv": {},
 	"remoteUser": "developer",
