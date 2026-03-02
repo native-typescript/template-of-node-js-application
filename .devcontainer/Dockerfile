@@ -22,5 +22,9 @@ RUN rm -rf /tmp/node.tar.xz /tmp/node-v${NODE_JS__VERSION}-linux-x64
 RUN apt-get update && apt-get install -y --no-install-recommends libatomic1 && rm -rf /var/lib/apt/lists/*
 ARG NODE_JS__VERSION
 ENV NODE_JS__VERSION=${NODE_JS__VERSION}
+ARG DOCKER_GID
+RUN groupadd -g ${DOCKER_GID} docker
+RUN usermod -aG docker developer
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates docker-cli docker-compose && rm -rf /var/lib/apt/lists/*
 USER developer
 WORKDIR /home/developer/template-of-node-js-application
