@@ -2,7 +2,7 @@
 
 ## Environment variables
 
-The application can be configured via [environment variables](https://en.wikipedia.org/wiki/Environment_variable).
+The application can be configured via [environment variables](https://en.wikipedia.org/wiki/Environment_variable). You can create a [.env](https://nodejs.org/api/environment_variables.html#env-files) file in the root of the project to set the environment variables.
 
 ### List
 
