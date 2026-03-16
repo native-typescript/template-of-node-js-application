@@ -8,6 +8,8 @@
 		"url": "https://github.com/native-typescript/template-of-node-js-application/issues"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "21.0.1",
+		"@commitlint/types": "21.0.1",
 		"@stylistic/eslint-plugin": "5.10.0",
 		"@types/node": "25.9.1",
 		"@typescript-eslint/parser": "8.59.4",
@@ -31,6 +33,8 @@
 		"url": "git+https://github.com/native-typescript/template-of-node-js-application.git"
 	},
 	"scripts": {
+		"commitlint:check:last": "commitlint --last --strict",
+		"commitlint:check:range": "commitlint --strict",
 		"eslint:check": "eslint --max-warnings=0 .",
 		"eslint:fix": "eslint --fix --max-warnings=0 .",
 		"prettier:check": "prettier --check .",
