@@ -9,6 +9,8 @@
 	},
 	"description": "A template of a Node.js application.",
 	"devDependencies": {
+		"@commitlint/cli": "21.2.3",
+		"@commitlint/types": "21.2.3",
 		"@stylistic/eslint-plugin": "5.10.0",
 		"@types/node": "25.9.1",
 		"@typescript-eslint/parser": "8.67.0",
@@ -32,6 +34,8 @@
 		"url": "git+https://github.com/native-typescript/template-of-node-js-application.git"
 	},
 	"scripts": {
+		"commitlint:check:last": "commitlint --last --strict",
+		"commitlint:check:range": "commitlint --strict",
 		"eslint:check": "eslint --max-warnings=0 .",
 		"eslint:fix": "eslint --fix --max-warnings=0 .",
 		"prettier:check": "prettier --check .",
