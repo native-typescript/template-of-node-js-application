@@ -1,1 +1,1 @@
-export type * as environment_ from "./index.ts";
+export * as environment_ from "./index.ts";
