@@ -1,1 +1,1 @@
-export type * as core_ from "./index.ts";
+export * as core_ from "./index.ts";
