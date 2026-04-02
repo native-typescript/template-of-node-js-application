@@ -8,8 +8,16 @@
 		"url": "https://github.com/native-typescript/template-of-node-js-application/issues"
 	},
 	"devDependencies": {
+		"@stylistic/eslint-plugin": "5.10.0",
 		"@types/node": "25.9.1",
-		"typescript": "6.0.3"
+		"@typescript-eslint/parser": "8.59.4",
+		"eslint": "10.4.0",
+		"eslint-plugin-import-x": "4.16.2",
+		"eslint-plugin-perfectionist": "5.9.0",
+		"eslint-plugin-unused-imports": "4.4.1",
+		"jiti": "2.7.0",
+		"typescript": "6.0.3",
+		"typescript-eslint": "8.59.4"
 	},
 	"engines": {
 		"node": ">=24.14.0",
@@ -22,6 +30,8 @@
 		"url": "git+https://github.com/native-typescript/template-of-node-js-application.git"
 	},
 	"scripts": {
+		"eslint:check": "eslint --max-warnings=0 .",
+		"eslint:fix": "eslint --fix --max-warnings=0 .",
 		"typescript:check": "tsc"
 	},
 	"type": "module",
