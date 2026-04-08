@@ -1,0 +1,1 @@
+export {parseNodeJsOfConfigurationOfEnvironmentOfTestingFromProcessEnv} from "./parseNodeJsOfConfigurationOfEnvironmentOfTestingFromProcessEnv.ts";

@@ -1,6 +1,62 @@
 env:
+  DEBIAN__DOCKER_IMAGE__TAG__DATE: "20251208"
   NODE_JS__VERSION: "24.14.0"
 jobs:
+  build_docker_image:
+    name: "Build a Docker image"
+    needs: ["release"]
+    outputs:
+      release_version: "${{needs.release.outputs.release_version}}"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Download the release"
+        uses: "robinraju/release-downloader@v1.12"
+        with:
+          tag: "${{needs.release.outputs.release_version}}"
+          tarBall: true
+      - name: "Unpack the release"
+        run: |
+          tar -xzf ./${{github.event.repository.name}}-${{needs.release.outputs.release_version}}.tar.gz
+      - name: "Remove tarball"
+        run: |
+          rm ./${{github.event.repository.name}}-${{needs.release.outputs.release_version}}.tar.gz
+      - name: "Move the files to the current directory"
+        run: |
+          shopt -s dotglob
+          mv ./${{github.event.repository.owner.login}}-${{github.event.repository.name}}-*/* ./
+          shopt -u dotglob
+          rm -rf ./${{github.event.repository.owner.login}}-${{github.event.repository.name}}-*/
+      - name: "Build a Docker image"
+        run: |
+          docker build --tag=${{vars.DOCKER_REGISTRY__REPOSITORY__NAME}}:${{needs.release.outputs.release_version}} --file=Dockerfile --build-arg="DEBIAN__DOCKER_IMAGE__TAG__DATE=${{env.DEBIAN__DOCKER_IMAGE__TAG__DATE}}" --build-arg="NODE_JS__VERSION=${{env.NODE_JS__VERSION}}" .
+      - name: "Upload the Docker image as an artifact"
+        uses: "ishworkh/container-image-artifact-upload@v2.0.0"
+        with:
+          image: "${{vars.DOCKER_REGISTRY__REPOSITORY__NAME}}:${{needs.release.outputs.release_version}}"
+  publish_to_docker_registry:
+    name: "Publish to the Docker registry"
+    needs: ["build_docker_image"]
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Download the built Docker image"
+        uses: "ishworkh/container-image-artifact-download@v2.1.0"
+        with:
+          image: "${{vars.DOCKER_REGISTRY__REPOSITORY__NAME}}:${{needs.build_docker_image.outputs.release_version}}"
+      - name: "Login to the Docker registry"
+        uses: "docker/login-action@v3"
+        with:
+          password: "${{secrets.DOCKER_REGISTRY__USER__PASSWORD}}"
+          registry: "${{vars.DOCKER_REGISTRY__HOST_NAME}}"
+          username: "${{vars.DOCKER_REGISTRY__USER__NAME}}"
+      - name: 'Push the Docker image to the registry with a "${{needs.build_docker_image.outputs.release_version}}" tag'
+        run: |
+          docker push ${{vars.DOCKER_REGISTRY__HOST_NAME}}/${{vars.DOCKER_REGISTRY__REPOSITORY__NAME}}:${{needs.build_docker_image.outputs.release_version}}
+      - name: 'Add a "latest" tag to the Docker image'
+        run: |
+          docker tag ${{vars.DOCKER_REGISTRY__HOST_NAME}}/${{vars.DOCKER_REGISTRY__REPOSITORY__NAME}}:${{needs.build_docker_image.outputs.release_version}} ${{vars.DOCKER_REGISTRY__HOST_NAME}}/${{vars.DOCKER_REGISTRY__REPOSITORY__NAME}}:latest
+      - name: 'Push the Docker image to the registry with a "latest" tag'
+        run: |
+          docker push ${{vars.DOCKER_REGISTRY__HOST_NAME}}/${{vars.DOCKER_REGISTRY__REPOSITORY__NAME}}:latest
   release:
     name: "Release"
     outputs:

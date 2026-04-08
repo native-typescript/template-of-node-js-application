@@ -1,0 +1,1 @@
+export {parseTagOfDockerImageOfDebianOfConfigurationOfEnvironmentOfTestingFromProcessEnv} from "./parseTagOfDockerImageOfDebianOfConfigurationOfEnvironmentOfTestingFromProcessEnv.ts";

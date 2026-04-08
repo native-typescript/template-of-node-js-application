@@ -1,3 +1,8 @@
+import type {
+	DebianOfConfigurationOfEnvironmentOfTesting,
+	NodeJsOfConfigurationOfEnvironmentOfTesting,
+} from "./fields/index.ts";
 export type ConfigurationOfEnvironmentOfTesting = {
-	readonly [key: string]: never;
+	readonly debian: DebianOfConfigurationOfEnvironmentOfTesting;
+	readonly nodeJs: NodeJsOfConfigurationOfEnvironmentOfTesting;
 };
