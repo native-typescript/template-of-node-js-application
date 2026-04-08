@@ -1,4 +1,5 @@
 env:
+  DEBIAN__DOCKER_IMAGE__TAG__DATE: "20251208"
   NODE_JS__VERSION: "24.14.0"
 jobs:
   commitlint_check:

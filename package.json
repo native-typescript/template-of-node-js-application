@@ -12,6 +12,7 @@
 		"@native-typescript/stringifying-zod-issues": "7.0.0",
 		"zod": "4.4.3"
 	},
+	"description": "A template of a Node.js application.",
 	"devDependencies": {
 		"@commitlint/cli": "21.0.1",
 		"@commitlint/types": "21.0.1",
