@@ -1,1 +1,1 @@
-export type * as instances_ from "./index.ts";
+export * as instances_ from "./index.ts";

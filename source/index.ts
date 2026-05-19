@@ -1,2 +1,2 @@
 export * from "./core/module.ts";
-export type * from "./instances/module.ts";
+export * from "./instances/module.ts";
