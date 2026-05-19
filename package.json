@@ -7,6 +7,9 @@
 	"bugs": {
 		"url": "https://github.com/native-typescript/template-of-node-js-application/issues"
 	},
+	"dependencies": {
+		"arktype": "2.2.9"
+	},
 	"description": "A template of a Node.js application.",
 	"devDependencies": {
 		"@commitlint/cli": "21.2.3",
@@ -18,7 +21,6 @@
 		"@types/node": "25.9.1",
 		"@typescript-eslint/eslint-plugin": "8.72.2",
 		"@typescript-eslint/parser": "8.72.2",
-		"arktype": "2.2.9",
 		"eslint": "10.4.0",
 		"eslint-plugin-import-x": "4.16.2",
 		"eslint-plugin-perfectionist": "5.9.0",
