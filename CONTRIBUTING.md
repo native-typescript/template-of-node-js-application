@@ -165,6 +165,18 @@ npm run test:check:integration
 
 to perform testing for integration tests.
 
+##### System
+
+System tests are such that they do build the application. They run against the built application.
+
+Run
+
+```
+npm run test:check:system
+```
+
+to perform testing for system tests.
+
 ##### Unit
 
 Unit tests are such that they don't setup any external dependencies before running.
