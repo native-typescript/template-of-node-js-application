@@ -1,1 +1,1 @@
-export type * as features_ from "./index.ts";
+export * as features_ from "./index.ts";

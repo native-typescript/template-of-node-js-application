@@ -1,1 +1,1 @@
-export type * from "./features/module.ts";
+export * from "./features/module.ts";
