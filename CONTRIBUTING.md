@@ -19,6 +19,7 @@
 - [release-it.config.ts](https://github.com/release-it/release-it/blob/main/docs/configuration.md#configuration) - Configuration of [release-it](https://github.com/release-it/release-it);
 - source - Source code;
   - core - Core modules;
+  - entrypoint.ts - Entrypoint of the application;
   - index.ts - Index of source code;
   - instances - Instances of the core modules;
 - testing - Testing code;
@@ -124,6 +125,14 @@ npm run release-it
 
 to make a release.
 
+### Starting
+
+Run
+
+```
+npm run start
+```
+
 ### Testing
 
 Tests are using [the native Node.js test runner](https://nodejs.org/api/test.html).
@@ -181,3 +190,9 @@ npm run typescript:check
 ```
 
 to perform type checking.
+
+## Environment variables
+
+The application can be configured via [environment variables](https://en.wikipedia.org/wiki/Environment_variable).
+
+### List

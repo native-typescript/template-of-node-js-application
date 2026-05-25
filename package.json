@@ -8,13 +8,13 @@
 		"url": "https://github.com/native-typescript/template-of-node-js-application/issues"
 	},
 	"dependencies": {
+		"@native-typescript/loader-of-typescript-for-node-js": "4.0.0",
 		"@native-typescript/stringifying-zod-issues": "7.0.0",
 		"zod": "4.4.3"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "21.0.1",
 		"@commitlint/types": "21.0.1",
-		"@native-typescript/loader-of-typescript-for-node-js": "4.0.0",
 		"@release-it/conventional-changelog": "11.0.0",
 		"@stylistic/eslint-plugin": "5.10.0",
 		"@types/node": "25.9.1",
@@ -49,6 +49,7 @@
 		"prettier:check": "prettier --check .",
 		"prettier:fix": "prettier --write .",
 		"release-it": "release-it --config='./release-it.config.ts'",
+		"start": "node ./source/entrypoint.ts",
 		"test:check": "node --experimental-test-coverage --test --test-concurrency=1 --test-coverage-exclude='**/*.test.*' --test-coverage-exclude='node_modules/**/*' --test-coverage-exclude='testing/**/*' --test-coverage-include='source/**/*' --test-global-setup='./testing/entrypoint-of-testing.ts' '**/*.test.ts'",
 		"test:check:integration": "node --test --test-concurrency=1 --test-global-setup='./testing/entrypoint-of-testing.ts' '**/*.integration.test.ts'",
 		"test:check:unit": "node --test --test-global-setup='./testing/entrypoint-of-testing.ts' '**/*.unit.test.ts'",
