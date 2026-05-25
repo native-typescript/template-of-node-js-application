@@ -19,6 +19,7 @@
 - [release-it.config.ts](https://github.com/release-it/release-it/blob/main/docs/configuration.md#configuration) – Configuration of [release-it](https://github.com/release-it/release-it);
 - source – Source code;
   - core – Core modules;
+  - entrypoint.ts – Entrypoint;
   - index.ts – Index;
   - instances – Instances of the core modules;
   - module.ts – Module;
@@ -124,6 +125,16 @@ npm run release-it
 ```
 
 to make a release.
+
+### Starting
+
+Run
+
+```
+npm run start
+```
+
+to start the application.
 
 ### Testing
 
