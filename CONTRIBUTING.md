@@ -25,6 +25,8 @@
   - module.ts – Module;
 - testing – Testing code;
   - core – Core modules;
+  - docker-compose.yaml – Configuration of [Docker Compose](https://docs.docker.com/compose) for the tests;
+  - docker-compose.yaml.integration.test.ts – Integration test for the Docker Compose configuration;
   - entrypoint.ts – Global setup and teardown for tests;
   - index.ts – Index;
   - instances – Instances of the core modules;
