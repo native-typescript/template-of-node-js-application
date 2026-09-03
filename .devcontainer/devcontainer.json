@@ -4,7 +4,11 @@
 	"containerUser": "developer",
 	"customizations": {
 		"vscode": {
-			"extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"sst-dev.opencode"
+			]
 		}
 	},
 	"dockerComposeFile": ["./docker-compose.yaml"],
