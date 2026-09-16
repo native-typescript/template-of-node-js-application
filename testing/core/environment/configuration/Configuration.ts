@@ -1,3 +1,4 @@
+import type {fields_} from "./fields/module.ts";
 export interface Configuration {
-	readonly [key: string]: never;
+	readonly dockerImage: fields_.dockerImage_.DockerImage;
 }

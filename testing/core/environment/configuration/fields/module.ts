@@ -1,1 +1,1 @@
-export type * as fields_ from "./index.ts";
+export * as fields_ from "./index.ts";
