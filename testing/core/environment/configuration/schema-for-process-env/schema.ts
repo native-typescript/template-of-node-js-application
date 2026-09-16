@@ -1,6 +1,14 @@
 import type {Configuration} from "../Configuration.ts";
-import {type} from "arktype";
-export const schema = type({}).pipe(function parse(processEnv): Configuration {
-	const configuration = {} as const satisfies Configuration;
-	return configuration;
-});
+import {fields_} from "../fields/module.ts";
+export const schema = fields_.dockerImage_.schemaForProcessEnv_.schema.pipe(
+	function parse(processEnv): Configuration {
+		const dockerImageOfConfiguration =
+			fields_.dockerImage_.schemaForProcessEnv_.parsing_.parse(
+				processEnv,
+			) satisfies fields_.dockerImage_.DockerImage;
+		const configuration = {
+			dockerImage: dockerImageOfConfiguration,
+		} as const satisfies Configuration;
+		return configuration;
+	},
+);
