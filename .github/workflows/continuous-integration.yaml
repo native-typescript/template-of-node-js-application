@@ -70,6 +70,9 @@ jobs:
         run: |
           npm run prettier:check
   test_check:
+    env:
+      DOCKER_IMAGE__DEBIAN__DOCKER_IMAGE__TAG__DATE: "20260918"
+      DOCKER_IMAGE__NODE_JS__VERSION: "26.9.0"
     name: "Test check"
     runs-on: "ubuntu-latest"
     steps:
