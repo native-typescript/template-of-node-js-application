@@ -11,6 +11,7 @@
 - [.vscode](https://code.visualstudio.com/docs/configure/settings#_workspace-settings) – Configuration of [Visual Studio Code](https://code.visualstudio.com);
 - [commitlint.config.ts](https://commitlint.js.org/reference/configuration.html#config-via-file) – Configuration of [commitlint](https://commitlint.js.org);
 - [CONTRIBUTING.md](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors);
+- [docker-compose.yaml](https://docs.docker.com/compose/compose-file/) – Configuration of [Docker Compose](https://docs.docker.com/compose/);
 - [Dockerfile](https://docs.docker.com/build/concepts/dockerfile/);
 - Dockerfile.system.test.ts;
 - [eslint.config.ts](https://eslint.org/docs/latest/use/configure/configuration-files) – Configuration of [ESLint](https://eslint.org);
