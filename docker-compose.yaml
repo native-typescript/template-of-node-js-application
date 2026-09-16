@@ -1,0 +1,16 @@
+services:
+  template_of_node_js_application:
+    build:
+      args:
+        DEBIAN__DOCKER_IMAGE__TAG__DATE: "${DEBIAN__DOCKER_IMAGE__TAG__DATE}"
+        NODE_JS__VERSION: "${NODE_JS__VERSION}"
+      context: "."
+      dockerfile: "Dockerfile"
+    depends_on: {}
+    env_file:
+      - path: ".env"
+        required: false
+    environment: {}
+    ports: {}
+    working_dir: "/home/runner/template-of-node-js-application"
+volumes: {}
