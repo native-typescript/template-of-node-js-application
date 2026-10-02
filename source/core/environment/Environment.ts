@@ -1,3 +1,4 @@
+import type {fields_} from "./fields/module.ts";
 export interface Environment {
-	readonly [key: string]: never;
+	readonly features: fields_.features_.Features;
 }
